@@ -11,3 +11,7 @@ html{
 body{
     height:100%;
 }
+
+li, p, ul, a {
+    font-size: 1.5rem;
+}

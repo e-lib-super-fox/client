@@ -1,0 +1,26 @@
+<template>
+<div class="col-md-4">
+  <div class="login-panel panel panel-default">
+      <div class="panel-heading">
+          <h3 class="panel-title">Sign In</h3>
+      </div>
+      <div class="panel-body">
+          <form role="form">
+              <fieldset>
+                  <div class="form-group">
+                      <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus="">
+                  </div>
+                  <div class="form-group">
+                      <input class="form-control" placeholder="Password" name="password" type="password" value="">
+                  </div>
+                  <a href="javascript:;" class="btn btn-sm btn-success">Login</a>
+              </fieldset>
+          </form>
+      </div>
+  </div>
+</div>
+</template>
+<script>
+</script>
+<style scoped>
+</style>
