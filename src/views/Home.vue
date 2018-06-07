@@ -10,7 +10,6 @@
 // @ is an alias to /src
 import Home from '@/components/Home.vue'
 import Login from '@/components/Login.vue'
-import DetailBook from '@/components/DetailBook.vue'
 
 export default {
   name: 'home',
@@ -20,8 +19,7 @@ export default {
   },
   components: {
     Home,
-    Login,
-    DetailBook
+    Login
   }
 }
 </script>
