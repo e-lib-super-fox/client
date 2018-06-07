@@ -1,12 +1,12 @@
 <template>
-    <b-navbar>
-        <b-navbar-brand id="brand">
+    <b-navbar class="nav-bg">
+        <b-navbar-brand>
             <span id="brand" class="icon-userIcon"/>
         </b-navbar-brand>
     </b-navbar>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -26,5 +26,8 @@
 }
 #brand{
     font-size: 5rem;
+}
+.nav-bg{
+  background-color: #02c5d7
 }
 </style>
