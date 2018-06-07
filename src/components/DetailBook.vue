@@ -1,4 +1,5 @@
 <template>
+<<<<<<< c22627c8209e6202633d9a2a00860a90cab253dd
   <b-col cols="12">
     <b-row>
       <b-col cols="12" md="3">
@@ -20,10 +21,24 @@
     </b-row>
   </b-col>
 </template>
+=======
+  <b-container>
+    <b-row>
+      <b-col cols="3">col-8</b-col>
+      <b-col cols="7">col-4</b-col>
+      <b-col cols="2">
+        <b-button variant="primary"> Download </b-button>
+      </b-col>
+    </b-row>
+  </b-container>
+</template>
+
+>>>>>>> fitur login
 <script>
 import axios from 'axios'
 
 export default {
+<<<<<<< c22627c8209e6202633d9a2a00860a90cab253dd
   name: 'detailBook',
   data () {
     return {
@@ -49,4 +64,18 @@ export default {
 </script>
 <style>
 
+=======
+  name: 'login',
+  data () {
+    return {
+    }
+  },
+  methods : {
+    
+  }
+}
+</script>
+
+<style scoped>
+>>>>>>> fitur login
 </style>
