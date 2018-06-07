@@ -3,7 +3,7 @@
         <b-navbar-brand>
             <span id="brand" class="icon-logo"/>
         </b-navbar-brand>
-        <b-nav-item-dropdown text="<span class='icon-userIcon' />" right>
+        <b-nav-item-dropdown v-if="LoggedIn" text="<span class='icon-userIcon' />" right>
           <b-dropdown-item v-if="isAdmin" href="#">Add Book</b-dropdown-item>
           <b-dropdown-item href="#">Logout</b-dropdown-item>
         </b-nav-item-dropdown>
@@ -13,7 +13,8 @@
 export default{
     data () {
         return {
-            isAdmin: false
+            isAdmin: false,
+            LoggedIn:false
         }
     }
 }

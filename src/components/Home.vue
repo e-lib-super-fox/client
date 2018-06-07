@@ -1,15 +1,17 @@
 <template>
     <div>
-        <GetAllBook/>
+        <GetAllBook v-if="LoggedIn"/>
+        <Login v-else/>
     </div>
 </template>
 <script>
 import GetAllBook from './GetAllBook.vue'
+import Login from './Login.vue'
 export default{
-    components:{ GetAllBook },
+    components:{ GetAllBook, Login },
     data () {
         return {
-
+            LoggedIn:false
         }
     }
 }
