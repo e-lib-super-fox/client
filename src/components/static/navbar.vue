@@ -1,19 +1,11 @@
 <template>
-  <div id="app">
-    <Navbar/>
-    <router-view/>
-  </div>
+    <b-navbar>
+        <b-navbar-brand id="brand">
+            <span id="brand" class="icon-userIcon"/>
+        </b-navbar-brand>
+    </b-navbar>
 </template>
-<script>
-import Navbar from './components/static/navbar'
 
-export default{
-  name: 'App',
-  components: {
-    Navbar
-  }
-}
-</script>
 <style lang="scss">
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -31,5 +23,8 @@ export default{
       color: #42b983;
     }
   }
+}
+#brand{
+    font-size: 5rem;
 }
 </style>
