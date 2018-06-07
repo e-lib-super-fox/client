@@ -25,7 +25,9 @@
   <b-container>
     <b-row>
       <b-col cols="3">col-8</b-col>
-      <b-col cols="7">col-4</b-col>
+      <b-col cols="7">
+        <h2></h2>
+      </b-col>
       <b-col cols="2">
         <b-button variant="primary"> Download </b-button>
       </b-col>
@@ -68,6 +70,9 @@ export default {
   name: 'login',
   data () {
     return {
+      book: {
+        name
+      }
     }
   },
   methods : {
