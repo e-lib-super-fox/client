@@ -13,8 +13,8 @@ body{
     height:100%;
 }
 
-a,li,p,ul,h4,button,input{
-    font-size:1.7rem !important;
+a, li, p, ul, h4, button, input{
+    font-size: 1.5rem;
 }
 
 h3{
@@ -33,7 +33,6 @@ ul,li{
     list-style:none !important;
 
 }
-
 a:hover{
     text-decoration: none !important;
 }

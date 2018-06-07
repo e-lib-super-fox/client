@@ -38,4 +38,7 @@ export default{
 .nav-bg{
   background-color: #02c5d7
 }
+.nav-bg{
+  background-color: #02c5d7
+}
 </style>
