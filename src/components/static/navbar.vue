@@ -13,16 +13,21 @@
 export default{
     data () {
         return {
-            isAdmin: true,
+            isAdmin: false,
             LoggedIn:false
         }
     },
     created(){
         if(localStorage.getItem('token')) this.LoggedIn = true
+        if(localStorage.getItem('role') === 'admin') this.isAdmin = true
     },
     methods:{
         logout: function(){
             localStorage.removeItem('token')
+            localStorage.removeItem('role')
+            localStorage.removeItem('username')
+            localStorage.removeItem('email')
+            
             this.LoggedIn = false
             window.location = '/'
         }
