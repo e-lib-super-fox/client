@@ -38,7 +38,12 @@ export default {
         axios
             .post('http://localhost:3000/signin', account)
             .then( (response) => {
-                localStorage.setItem('token',response.data.token)
+                console.log(response)
+                let { token,user } = response.data
+                localStorage.setItem('token',token)
+                localStorage.setItem('role',user.role)
+                localStorage.setItem('username',user.username)
+                localStorage.setItem('email',user.email)
                  window.location = '/'
             })
             .catch(error => {
