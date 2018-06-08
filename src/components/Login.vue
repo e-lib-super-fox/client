@@ -3,7 +3,7 @@
 
     <b-card no-body>
       <b-tabs pills card>
-        <b-tab title="Tab 1" active>
+        <b-tab title="Login" active>
           <div class="panel-heading">
             <h3 class="panel-title">Sign In</h3>
           </div>
@@ -21,7 +21,7 @@
               </fieldset>
           </div>
         </b-tab>
-        <b-tab title="Tab 2">
+        <b-tab title="Register">
           <div class="panel-heading">
             <h3 class="panel-title">Register</h3>
           </div>
