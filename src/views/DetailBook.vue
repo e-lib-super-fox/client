@@ -1,21 +1,21 @@
 <template>
-  <b-container class="card" style="padding:1rem">
+  <b-container class="card text-left" style="padding:1rem">
     <b-row>
       <b-col cols="12" md="3">
         <img :src="book.image" width="200"/>
       </b-col>
       <b-col cols="12" md="7">
-        <h2>{{ book.title }}</h2>
+        <h1 style="font-weight: bold">{{ book.title }}</h1>
         <ul>
-          <b-media tag="li">ISBN: {{ book.isbn }}</b-media>
-          <b-media tag="li">Author: {{ book.authors}}</b-media>
+          <b-media tag="li"><b>ISBN:</b> {{ book.isbn }}</b-media>
+          <b-media tag="li"><b>Author:</b> {{ book.authors}}</b-media>
         </ul>
         <p>
           {{ book.description }}
         </p>
       </b-col>
       <b-col cols="12" md="2">
-        <b-button variant="primary" @click="downloadFile"> Download </b-button>
+        <b-button variant="success" @click="downloadFile"> Download Book <i class="fas fa-download"></i> </b-button>
       </b-col>
     </b-row>
   </b-container>
@@ -59,11 +59,17 @@ export default {
     }
   },
   created () {
-    let id = parseInt(this.$route.params.id)
-    let book = this.books.filter( book => book.id === id)
-    this.book = book[0]
-    console.log(book);
+    console.log(localStorage.getItem('token'));
     
+    if(!localStorage.getItem('token')) {
+      this.$router.push('/')
+    } else {
+      let id = parseInt(this.$route.params.id)
+      let book = this.books.filter( book => book.id === id)
+      this.book = book[0]
+      console.log(book);
+    }
+      
   },
   methods : {
     downloadFile () {

@@ -19,6 +19,9 @@ a, li, p, ul, h4, button, input{
 h3{
     font-size:2rem !important;
 }
+li, p, ul, h4, button, input {
+    font-size: 1.7rem !important;
+}
 
 h2{
     font-size:2.3rem !important;
