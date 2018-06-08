@@ -76,9 +76,12 @@ export default{
             formData.append('description',this.Description)
             formData.append('imageUrl',this.imageUrl)
             formData.append('image',this.image)
+            formData.append('file',this.file)
 
-            axios.post('https://dwikyerl.me/books/add',{
-            },{ headers: { authorization:localStorage.getItem('token') } })
+            axios.post('https://dwikyerl.me/books/add',formData,{ headers: { authorization:localStorage.getItem('token') } })
+            .then(result=>{
+                window.location="/"
+            })
         },
         changeImage: function(event){
             this.image = event.target.files[0]

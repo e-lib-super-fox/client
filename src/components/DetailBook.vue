@@ -49,7 +49,7 @@ export default {
         console.log(result)
         let { authors, description, file, filename, image, isbn, title } = result.data.book
         this.book.isbn = isbn
-        this.book.description = description
+        this.book.description = description===undefined?'no description provided':description
         this.book.file = file
         this.book.filename = filename
         this.book.image = image===undefined? "https://lightning.od-cdn.com/22.0.1-build-1729-master/public/img/no-cover_en_US.jpg" :image
