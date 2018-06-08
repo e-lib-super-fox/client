@@ -18,6 +18,9 @@ export default{
             skipLogin:false,
         }
     },
+    created(){
+        if(localStorage.getItem('token')) this.LoggedIn = true
+    },
     methods: {
         toSkipLogin: function(){
             this.skipLogin = true

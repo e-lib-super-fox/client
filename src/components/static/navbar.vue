@@ -5,7 +5,7 @@
         </b-navbar-brand>
         <b-nav-item-dropdown v-if="LoggedIn" text="<span class='icon-userIcon' />" right>
           <b-dropdown-item v-if="isAdmin" href="#">Add Book</b-dropdown-item>
-          <b-dropdown-item href="#">Logout</b-dropdown-item>
+          <b-dropdown-item @click="logout">Logout</b-dropdown-item>
         </b-nav-item-dropdown>
     </b-navbar>
 </template>
@@ -13,8 +13,18 @@
 export default{
     data () {
         return {
-            isAdmin: false,
+            isAdmin: true,
             LoggedIn:false
+        }
+    },
+    created(){
+        if(localStorage.getItem('token')) this.LoggedIn = true
+    },
+    methods:{
+        logout: function(){
+            localStorage.removeItem('token')
+            this.LoggedIn = false
+            window.location = '/'
         }
     }
 }

@@ -34,22 +34,21 @@ export default {
     },
     methods : {
         register () {
-        console.log(this.email, this.username, this.password);
-        let account = {
-            email: this.email,
-            password: this.password,
-            username: this.username
-        }
+            let account = {
+                email: this.email,
+                password: this.password,
+                username: this.username
+            }
 
-        axios
-            .post('http://localhost:3000/users/signup', account)
-            .then( (response) => {
-                console.log(response)
-            })
-            .catch(error => {
-            console.log(error);
-            
-            })
+            axios
+                .post('http://localhost:3000/signup', account)
+                .then( (response) => {
+                    console.log(response)
+                })
+                .catch(error => {
+                console.log(error);
+                
+                })
         }
     }
 }

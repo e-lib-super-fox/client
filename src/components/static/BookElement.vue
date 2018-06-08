@@ -1,6 +1,6 @@
 <template>
-    <b-col :id="isbnBook" class="bookContainer" cols="4" md="3" @click:>
-        <a :href="'/detail-book/'+isbnBook">
+    <b-col :id="idBook" class="bookContainer" cols="4" md="3" @click:>
+        <a :href="'/detail-book/'+idBook">
             <div class="bookImageContainer">
                 <img class="bookImg img-thumbnail" :src="bookPicture" alt="">
             </div>
@@ -16,7 +16,7 @@ export default{
         return {
         }
     },
-    props: ['isbnBook','bookTitle','bookPicture']
+    props: ['idBook','bookTitle','bookPicture']
 }
 </script>
 <style>

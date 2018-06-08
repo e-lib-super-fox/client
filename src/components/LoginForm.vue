@@ -6,8 +6,8 @@
       <div class="panel-body">
           <fieldset>
               <div class="form-group">
-                <label>Email</label>
-                <input class="form-control" placeholder="E-mail" type="email" v-model="email" required>
+                <label>Email or username</label>
+                <input class="form-control" placeholder="E-mail/username" type="email" v-model="user" required>
               </div>
               <div class="form-group">
                 <label>Password</label>
@@ -23,23 +23,23 @@ import axios from 'axios'
 export default {
     data () {
         return {
-            email: '',
-            username: '',
+            user: '',
             password: ''
         }
     },
     methods : {
     login () {
-        console.log(this.email, this.password);
+        console.log(this.user, this.password);
         let account = {
-            email: this.email,
+            user: this.user,
             password: this.password
         }
 
         axios
-            .post('http://localhost:3000/users/signin', account)
+            .post('http://localhost:3000/signin', account)
             .then( (response) => {
-
+                localStorage.setItem('token',response.data.token)
+                 window.location = '/'
             })
             .catch(error => {
             console.log(error);

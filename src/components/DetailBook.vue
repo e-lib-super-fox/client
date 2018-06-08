@@ -1,5 +1,5 @@
 <template>
-  <b-col cols="12" style="margin-top:5rem;">
+  <b-col id="wrapper" cols="12" style="margin-top:5rem;">
     <b-row>
       <b-col cols="12" md="3">
         <img :src="book.image" width="200"/>
@@ -15,7 +15,7 @@
         </p>
       </b-col>
       <b-col cols="12" md="2">
-        <b-button variant="primary" @click="downloadFile"> Download </b-button>
+        <a :href="book.file"><b-button id="download" variant="primary" download> Download </b-button></a>
       </b-col>
     </b-row>
   </b-col>
@@ -36,9 +36,26 @@ export default {
         `,
         file: 'tes.pdf',
         image: 'https://lightning.od-cdn.com/22.0.1-build-1729-master/public/img/no-cover_en_US.jpg',
-        uploader: 'unknown'
+        uploader: 'unknown',
+        filename:'',
+        file:''
       }
     }
+  },
+  created(){
+    console.log(this.$route.path.split('/')[2])
+    axios.get('http://localhost:3000/books/'+this.$route.path.split('/')[2])
+    .then(result=>{
+        console.log(result)
+        let { authors, description, file, filename, image, isbn, title } = result.data.book
+        this.book.isbn = isbn
+        this.book.description = description
+        this.book.file = file
+        this.book.filename = filename
+        this.book.image = image===undefined? "https://lightning.od-cdn.com/22.0.1-build-1729-master/public/img/no-cover_en_US.jpg" :image
+        this.book.isbn = isbn
+        this.book.title = title
+    })
   },
   methods : {
     downloadFile () {
@@ -48,5 +65,11 @@ export default {
 }
 </script>
 <style>
-
+#wrapper{
+  max-width:100% !important;
+}
+#download{
+  display:flex;
+  flex-wrap:wrap;
+}
 </style>
