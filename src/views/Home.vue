@@ -1,7 +1,6 @@
 <template>
   <div class="home">
     <Home/>
-    <GetAllBook/>
 
   </div>
 </template>

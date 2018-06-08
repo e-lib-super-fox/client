@@ -12,6 +12,13 @@ export default {
     return {
     }
   },
+  created () {
+    let id = parseInt(this.$route.params.id)
+    let book = this.books.filter( book => book.id === id)
+    this.book = book[0]
+    console.log(book);
+    
+  },
   methods : {
   }
 }
