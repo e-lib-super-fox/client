@@ -15,7 +15,7 @@ export default new Router({
       component: Home
     },
     {
-      path: '/detail-book/',
+      path: '/detail-book/:isbn',
       name: 'detailBook',
       component: DetailBook
     },

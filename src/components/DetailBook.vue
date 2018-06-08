@@ -1,5 +1,5 @@
 <template>
-  <b-col cols="12">
+  <b-col cols="12" style="margin-top:5rem;">
     <b-row>
       <b-col cols="12" md="3">
         <img :src="book.image" width="200"/>

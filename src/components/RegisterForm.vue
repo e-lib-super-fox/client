@@ -44,7 +44,7 @@ export default {
         axios
             .post('http://localhost:3000/users/signup', account)
             .then( (response) => {
-
+                console.log(response)
             })
             .catch(error => {
             console.log(error);

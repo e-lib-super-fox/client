@@ -27,7 +27,6 @@ export default {
   },
   methods : {
     ShowLoginForm(){
-      console.log(this.$refs.Login.classList)
       this.LoginForm = true
       this.$refs.Login.classList.remove("active")
       this.$refs.Register.classList.remove("active")

@@ -1,21 +1,22 @@
 <template>
-    <b-col class="bookContainer" cols="4" md="3">
-        <div class="bookImageContainer">
-            <img class="bookImg img-thumbnail" :src="bookPicture" alt="">
-        </div>
-        <div class="captions">
-            <h1>{{bookTitle}}</h1>
-        </div>
+    <b-col :id="isbnBook" class="bookContainer" cols="4" md="3" @click:>
+        <a :href="'/detail-book/'+isbnBook">
+            <div class="bookImageContainer">
+                <img class="bookImg img-thumbnail" :src="bookPicture" alt="">
+            </div>
+            <div class="captions">
+                <h1>{{bookTitle}}</h1>
+            </div>
+        </a>
     </b-col>
 </template>
 <script>
 export default{
     data () {
         return {
-
         }
     },
-    props: ['bookTitle','bookPicture']
+    props: ['isbnBook','bookTitle','bookPicture']
 }
 </script>
 <style>

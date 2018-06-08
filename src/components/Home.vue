@@ -1,7 +1,10 @@
 <template>
     <div>
         <GetAllBook v-if="LoggedIn||skipLogin"/>
-        <Forms v-else/>
+        <div v-else>
+            <Forms/>
+            <a @click="toSkipLogin">skip to See All Books>>>></a>
+        </div>
     </div>
 </template>
 <script>
@@ -13,6 +16,11 @@ export default{
         return {
             LoggedIn:false,
             skipLogin:false,
+        }
+    },
+    methods: {
+        toSkipLogin: function(){
+            this.skipLogin = true
         }
     }
 }
