@@ -4,7 +4,7 @@
             <a href="/"><span id="brand" class="icon-logo"/></a>
         </b-navbar-brand>
         <b-nav-item-dropdown v-if="LoggedIn" text="<span class='icon-userIcon' />" right>
-          <b-dropdown-item v-if="isAdmin" href="#">Add Book</b-dropdown-item>
+          <b-dropdown-item v-if="isAdmin" :href="'/add-book'">Add Book</b-dropdown-item>
           <b-dropdown-item @click="logout">Logout</b-dropdown-item>
         </b-nav-item-dropdown>
     </b-navbar>

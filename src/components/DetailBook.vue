@@ -15,7 +15,7 @@
         </p>
       </b-col>
       <b-col cols="12" md="2">
-        <a :href="book.file"><b-button id="download" variant="primary" download> Download </b-button></a>
+        <a :href="book.file"><b-button id="download" variant="primary" @click="downloadBook"> Download </b-button></a>
       </b-col>
     </b-row>
   </b-col>
@@ -58,8 +58,8 @@ export default {
     })
   },
   methods : {
-    downloadFile () {
-
+    downloadBook: function () {
+      axios.get('http://localhost:3000/books/download?q='+this.book.filename)
     }
   }
 }
