@@ -29,23 +29,31 @@ export default {
         }
     },
     methods : {
-    login () {
-        console.log(this.email, this.password);
-        let account = {
-            email: this.email,
-            password: this.password
-        }
+        login () {
+            if(this.email == '' || this.password == '') {
+                alert('email and password is required')
+            }
 
-        axios
-            .post('http://localhost:3000/users/signin', account)
-            .then( (response) => {
+            console.log(this.email, this.password);
+            let account = {
+                email: this.email,
+                password: this.password
+            }
+            // localStorage.setItem('token', '123')
+            // localStorage.setItem('role', 'admin')
+            // location.reload()
 
-            })
-            .catch(error => {
-            console.log(error);
-            
-            })
-        
+            axios
+                .post('http://localhost:3000/users/signin', account)
+                .then( (response) => {
+                localStorage.setItem('token', response.data.token)
+                localStorage.setItem('role', response.data.role)
+                location.reload()
+                })
+                .catch(error => {
+                console.log(error);
+                alert('login failed')
+                })
         }
     }
 }

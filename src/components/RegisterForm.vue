@@ -34,6 +34,9 @@ export default {
     },
     methods : {
         register () {
+        if(this.email == '' || this.username == '' || this.password == '') {
+            alert('data is required')
+        }
         console.log(this.email, this.username, this.password);
         let account = {
             email: this.email,
@@ -44,11 +47,13 @@ export default {
         axios
             .post('http://localhost:3000/users/signup', account)
             .then( (response) => {
-
+            console.log(response);
+            alert('register success')
+            location.reload()
             })
             .catch(error => {
             console.log(error);
-            
+            alert('register failed')          
             })
         }
     }
