@@ -13,9 +13,10 @@
             description <br>
             <textarea v-model="Description" name="description" id="" cols="30" rows="10"></textarea><br>
             image <br>
-            <input type="file" name="image" id="" accept="image/*"><br>
+            <img :src="imageUrl" alt="">
+            <input type="file" name="image" id="" accept="image/*" @change="changeImage" ><br>
             bookFile <br>
-            <input type="file" accept="application/pdf" name="pdfFile"><br><br>
+            <input type="file" accept="application/pdf" name="pdfFile" @change="bookFile"><br><br>
             <button type="submit">Submit</button>
         </form>
     </b-container>
@@ -31,6 +32,9 @@ export default{
             Title:'',
             Authors:'',
             Description:'',
+            imageUrl:'',
+            image:'',
+            file:''
         }
     },
     created(){
@@ -48,13 +52,15 @@ export default{
     },
     methods:{
         sendisbnReq:function(){
-            const url = `http://localhost:3000/books/info?isbn=${this.isbn}`
-            console.log(this.isbn)
-            console.log(url)
-            console.log(localStorage.getItem('token') )
+            const url = `https://dwikyerl.me/books/info?isbn=${this.isbn}`
             axios.get(url,{ headers:{ authorization:localStorage.getItem('token') } }).then(
                 response=>{
-                    console.log(response)
+                    let { authors,title,description,image } = response.data.bookInfo
+                    this.Title = title
+                    this.Authors = authors
+                    this.Description = description
+                    console.log(this.$refs.image)
+                    this.imageUrl = image
                 }
             ).catch(err =>{
                 console.log(err)
@@ -62,8 +68,25 @@ export default{
             this.isbnForm=false
         },
         addBook:function(book){
+            let formData = new FormData()
 
+            formData.append('isbn',this.isbn)
+            formData.append('title',this.Title)
+            formData.append('authors',this.Authors)
+            formData.append('description',this.Description)
+            formData.append('imageUrl',this.imageUrl)
+            formData.append('image',this.image)
+
+            axios.post('https://dwikyerl.me/books/add',{
+            },{ headers: { authorization:localStorage.getItem('token') } })
+        },
+        changeImage: function(event){
+            this.image = event.target.files[0]
+        },
+        bookFile: function(event){
+            this.file = event.target.files[0]
         }
+
     },
     props: ['bookTitle','bookPicture']
 }
