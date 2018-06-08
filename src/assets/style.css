@@ -13,7 +13,7 @@ body{
     height:100%;
 }
 
-li, p, ul, a, h4 {
+li, p, ul, a, h4, button, input  {
     font-size: 1.7rem !important;
 }
 
