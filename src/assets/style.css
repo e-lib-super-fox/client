@@ -1,5 +1,6 @@
 *{
     font-family: 'Montserrat', sans-serif;
+    font-size: 1.7rem;
 }
 
 html{
@@ -12,7 +13,7 @@ body{
     height:100%;
 }
 
-a,li,p,ul,h4{
+a,li,p,ul,h4, button, input{
     font-size:1.7rem !important;
 }
 

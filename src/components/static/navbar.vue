@@ -34,4 +34,7 @@ export default{
 #__BVID__3__BV_button_{
     color:white !important;
 }
+.nav-bg{
+  background-color: #02c5d7
+}
 </style>

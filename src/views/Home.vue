@@ -1,6 +1,7 @@
 <template>
   <div class="home">
-    <GetAllBook/>
+  <div v-if="isLogin"> berarti sudah login</div>
+    <login v-else></login>
   </div>
 </template>
 
