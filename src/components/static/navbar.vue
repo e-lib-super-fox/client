@@ -1,7 +1,7 @@
 <template>
     <b-navbar id="navContainer">
         <b-navbar-brand>
-            <span id="brand" class="icon-logo"/>
+            <a href="/"><span id="brand" class="icon-logo"/></a>
         </b-navbar-brand>
         <b-nav-item-dropdown v-if="LoggedIn" text="<span class='icon-userIcon' />" right>
           <b-dropdown-item v-if="isAdmin" href="#">Add Book</b-dropdown-item>

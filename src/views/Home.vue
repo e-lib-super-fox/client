@@ -9,8 +9,12 @@
 import Home from '@/components/Home.vue'
 export default {
   name: 'home',
+  data () {
+    return {
+    }
+  },
   components: {
-    Home
+    Home,
   }
 }
 </script>

@@ -1,29 +1,18 @@
 <template>
     <div>
-<<<<<<< HEAD
-        <GetAllBook v-if="LoggedIn"/>
-        <Login v-else/>
-=======
-        <GetAllBook/>
->>>>>>> some checking on login
+        <GetAllBook v-if="LoggedIn||skipLogin"/>
+        <Forms v-else/>
     </div>
 </template>
 <script>
 import GetAllBook from './GetAllBook.vue'
-<<<<<<< HEAD
-import Login from './Login.vue'
+import Forms from './Forms.vue'
 export default{
-    components:{ GetAllBook, Login },
+    components:{ GetAllBook, Forms },
     data () {
         return {
-            LoggedIn:false
-=======
-export default{
-    components:{ GetAllBook },
-    data () {
-        return {
-
->>>>>>> some checking on login
+            LoggedIn:false,
+            skipLogin:false,
         }
     }
 }

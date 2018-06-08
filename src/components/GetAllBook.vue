@@ -1,15 +1,16 @@
 <template>
     <div>
-        <b-container style="margin-top:5rem;" class="card">
+        <b-col cols="12" offset-md="1" md="10" style="margin-top:5rem;" class="card container">
             <b-row>
                 <BookElement v-for="(book,index) in books" :key="index" :bookTitle="book.title" :bookPicture="book.picture" />
             </b-row>
-        </b-container>
+        </b-col>
     </div>
 </template>
 <script>
-import BookElement from './BookElement.vue'
+import BookElement from './static/BookElement.vue'
 export default{
+    name:'getAllBook',
     components:{ BookElement },
     data () {
         return{
@@ -20,7 +21,7 @@ export default{
 </script>
 <style>
 .container{
-    min-height:250rem;
+    min-height:250rem !important;
 }
 
 </style>
