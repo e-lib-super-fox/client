@@ -1,5 +1,5 @@
 <template>
-  <b-container>
+  <b-container class="card" style="padding:1rem">
     <b-row>
       <b-col cols="12" md="3">
         <img :src="book.image" width="200"/>
@@ -87,4 +87,7 @@ export default {
 </script>
 
 <style scoped>
+.container {
+  margin-top: 5rem
+}
 </style>
