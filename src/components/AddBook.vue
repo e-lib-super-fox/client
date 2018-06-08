@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
     <b-container style="margin-top:5rem;">
         <form :value="isbn" v-if="isbnForm" method="POST" @submit.prevent="sendisbnReq">
             Put Your ISBN Here
@@ -43,6 +44,21 @@ export default{
             this.isbnForm=false
         },
         addBook:function(book){
+=======
+    <b-container>
+        <form action="">
+            <input type="text">
+            <input type="text">
+            <input type="text">
+            <button>submit</button>
+        </form>
+    </b-container>
+</template>
+<script>
+export default{
+    data () {
+        return {
+>>>>>>> 6da2749f598bbb9b979aeb0e9101da34f0df6c07
 
         }
     },
