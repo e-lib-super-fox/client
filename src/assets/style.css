@@ -13,11 +13,7 @@ body{
     height:100%;
 }
 
-<<<<<<< HEAD
 a,li,p,ul,h4,button,input{
-=======
-a,li,p,ul,h4, button, input{
->>>>>>> 6da2749f598bbb9b979aeb0e9101da34f0df6c07
     font-size:1.7rem !important;
 }
 
@@ -35,7 +31,6 @@ h1{
 
 ul,li{
     list-style:none !important;
-<<<<<<< HEAD
 
 }
 
@@ -47,6 +42,4 @@ a{
 a:hover{
     text-decoration: none !important;
     color:rgba(2, 187, 156, 0.795) !important;
-=======
->>>>>>> 6da2749f598bbb9b979aeb0e9101da34f0df6c07
 }
