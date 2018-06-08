@@ -1,0 +1,45 @@
+*{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.7rem;
+}
+
+html{
+    font-size: 62.5%;
+    min-height:100%;
+    position:relative;
+}
+
+body{
+    height:100%;
+}
+
+a,li,p,ul,h4,button,input{
+    font-size:1.7rem !important;
+}
+
+h3{
+    font-size:2rem !important;
+}
+
+h2{
+    font-size:2.3rem !important;
+}
+
+h1{
+    font-size:2.7rem !important;
+}
+
+ul,li{
+    list-style:none !important;
+
+}
+
+a{
+    cursor: pointer;
+    color:#02c5d7 !important;
+}
+
+a:hover{
+    text-decoration: none !important;
+    color:rgba(2, 187, 156, 0.795) !important;
+}
