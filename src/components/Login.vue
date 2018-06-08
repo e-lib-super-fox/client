@@ -1,49 +1,49 @@
 <template>
   <b-container fluid>
-    
-    <b-row>
-      <b-col cols="4" offset="2">
-        <div class="panel-heading">
-            <h3 class="panel-title">Sign In</h3>
-        </div>
-        <div class="panel-body">
-            <fieldset>
+    <b-col cols="12" md="4" offset-md="4">
+      <b-card no-body>
+        <b-tabs pills card>
+          <b-tab title="Login" active>
+            <div class="panel-heading">
+            </div>
+            <div class="panel-body">
+              <fieldset>
                 <div class="form-group">
-                  <label>Email</label>
-                  <input class="form-control" placeholder="E-mail" type="email" v-model="email" required>
+                  <label>Email or username</label>
+                  <input class="form-control" placeholder="E-mail or Username" type="email" v-model="email" required>
                 </div>
                 <div class="form-group">
                   <label>Password</label>
                   <input class="form-control" placeholder="Password" type="password" v-model="password" required>
                 </div>
                 <button class="btn btn-sm btn-success" @click="login">Login</button>
-            </fieldset>
-        </div>
-      </b-col>
-
-      <b-col cols="4">
-        <div class="panel-heading">
-            <h3 class="panel-title">Register</h3>
-        </div>
-        <div class="panel-body">
-          <fieldset>
-            <div class="form-group">
-              <label>Email</label>
-              <input class="form-control" placeholder="E-mail" type="email" v-model="email">
+              </fieldset>
             </div>
-            <div class="form-group">
-              <label>username</label>
-              <input class="form-control" placeholder="username" type="text" v-model="username">
+          </b-tab>
+          <b-tab title="Register">
+            <div class="panel-heading">
             </div>
-            <div class="form-group">
-              <label>Password</label>
-              <input class="form-control" placeholder="Password" type="password" v-model="password">
+            <div class="panel-body">
+              <fieldset>
+                <div class="form-group">
+                  <label>Email</label>
+                  <input class="form-control" placeholder="E-mail" type="email" v-model="email">
+                </div>
+                <div class="form-group">
+                  <label>username</label>
+                  <input class="form-control" placeholder="username" type="text" v-model="username">
+                </div>
+                <div class="form-group">
+                  <label>Password</label>
+                  <input class="form-control" placeholder="Password" type="password" v-model="password">
+                </div>
+                <button class="btn btn-sm btn-success" @click="register">register</button>
+              </fieldset>
             </div>
-            <button class="btn btn-sm btn-success" @click="register">register</button>
-          </fieldset>
-        </div>
-      </b-col>
-    </b-row>
+          </b-tab>
+        </b-tabs>
+      </b-card>
+    </b-col>
   </b-container>
 </template>
 
@@ -61,24 +61,36 @@ export default {
   },
   methods : {
     login () {
+      if(this.email == '' || this.password == '') {
+        alert('email and password is required')
+      }
+
       console.log(this.email, this.password);
       let account = {
         email: this.email,
         password: this.password
       }
+      // localStorage.setItem('token', '123')
+      // localStorage.setItem('role', 'admin')
+      // location.reload()
 
       axios
         .post('http://localhost:3000/users/signin', account)
         .then( (response) => {
-
+          localStorage.setItem('token', response.data.token)
+          localStorage.setItem('role', response.data.role)
+          location.reload()
         })
         .catch(error => {
           console.log(error);
-          
+          alert('login failed')
         })
       
     },
     register () {
+      if(this.email == '' || this.username == '' || this.password == '') {
+        alert('data is required')
+      }
       console.log(this.email, this.username, this.password);
       let account = {
         email: this.email,
@@ -89,11 +101,13 @@ export default {
       axios
         .post('http://localhost:3000/users/signup', account)
         .then( (response) => {
-
+          console.log(response);
+          alert('register success')
+          location.reload()
         })
         .catch(error => {
           console.log(error);
-          
+          alert('register failed')          
         })
     }
   }
@@ -101,4 +115,7 @@ export default {
 </script>
 
 <style scoped>
+.container-fluid{
+  margin-top: 5rem
+}
 </style>
