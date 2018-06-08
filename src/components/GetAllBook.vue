@@ -44,13 +44,7 @@ export default{
 </script>
 <style>
 .container{
-<<<<<<< HEAD
     min-height:250rem !important;
 }
 
 </style>
-=======
-    min-height:250rem;
-}
-</style>
->>>>>>> 446e8e77ef79140fd68b965c4a41eefda3481d96
