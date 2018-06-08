@@ -13,18 +13,22 @@ body{
     height:100%;
 }
 
-li, p, ul, a, h4, button, input  {
-    font-size: 1.7rem !important;
+a,li,p,ul,h4, button, input{
+    font-size:1.7rem !important;
 }
 
-h1 {
-    font-size: 2.7rem !important;
+h3{
+    font-size:2rem !important;
 }
 
-h2 {
-    font-size: 2.3rem !important;
+h2{
+    font-size:2.3rem !important;
 }
 
-h3 {
-    font-size: 2rem !important;
+h1{
+    font-size:2.7rem !important;
+}
+
+ul,li{
+    list-style:none !important;
 }
