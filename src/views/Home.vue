@@ -1,7 +1,7 @@
 <template>
   <div class="home">
-    <!-- <login></login> -->
-    <GetAllBook/>
+    <GetAllBook v-if="isLogin"/>
+    <login v-else ></login>
 
   </div>
 </template>
@@ -18,6 +18,16 @@ export default {
     Home,
     Login,
     GetAllBook
+  },
+  data () {
+    return {
+      isLogin : true
+    }
+  },
+  created () {
+    if (localStorage.hasOwnProperty('token')) {
+      this.isLogin = true
+    }
   }
 }
 </script>
