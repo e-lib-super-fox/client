@@ -1,6 +1,8 @@
 <template>
   <div class="home">
-    <login></login>
+    <!-- <login></login> -->
+    <GetAllBook/>
+
   </div>
 </template>
 
@@ -8,12 +10,14 @@
 // @ is an alias to /src
 import Home from '@/components/Home.vue'
 import Login from '@/components/Login.vue'
+import GetAllBook from '@/components/GetAllBook.vue'
 
 export default {
   name: 'home',
   components: {
     Home,
-    Login
+    Login,
+    GetAllBook
   }
 }
 </script>
