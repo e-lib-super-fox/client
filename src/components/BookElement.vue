@@ -1,10 +1,14 @@
 <template>
     <b-col class="bookContainer" cols="4" md="3">
         <div class="bookImageContainer">
-            <img class="bookImg img-thumbnail" :src="bookPicture" alt="">
+            <img class="bookImg img-thumbnail" :src="book.image" alt="">
         </div>
         <div class="captions">
-            <h1>{{bookTitle}}</h1>
+            <h1>
+				<router-link :to="'/books/' + book.id">
+                    {{book.title}}
+				</router-link>
+            </h1>
         </div>
     </b-col>
 </template>
@@ -14,7 +18,7 @@ export default{
         return {
         }
     },
-    props: ['bookTitle','bookPicture']
+    props: ['book']
 }
 </script>
 <style>

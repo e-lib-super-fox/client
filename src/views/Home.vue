@@ -23,6 +23,16 @@ export default {
     Home,
     Login,
     GetAllBook
+  },
+  data () {
+    return {
+      isLogin : true
+    }
+  },
+  created () {
+    if (localStorage.hasOwnProperty('token')) {
+      this.isLogin = true
+    }
   }
 }
 </script>
